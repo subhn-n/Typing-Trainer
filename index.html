@@ -264,6 +264,24 @@
       font-weight: 700;
     }
 
+    .site-footer {
+      margin-top: 22px;
+      padding: 12px 0 4px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .site-footer a {
+      color: var(--accent-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 900px) {
       .stats,
       .mode-panel {
@@ -359,6 +377,11 @@
         </div>
       </div>
     </section>
+
+    <footer class="site-footer">
+      <span id="footerYear"></span> · Designed and developed by
+      <a href="https://github.com/subhn-n" target="_blank" rel="noopener noreferrer">Subhen Vignes</a>
+    </footer>
   </main>
 
   <script>
@@ -391,6 +414,7 @@
     const letterStatEl = document.getElementById("letterStat");
     const lastScoreEl = document.getElementById("lastScore");
     const statusEl = document.getElementById("status");
+    const footerYearEl = document.getElementById("footerYear");
 
     let currentPhrase = "";
     let startedAt = null;
@@ -747,6 +771,7 @@
     });
     window.addEventListener("resize", updatePaceCursor);
 
+    footerYearEl.textContent = new Date().getFullYear();
     updateLastScore(0);
     restart();
   </script>
