@@ -2,6 +2,8 @@
 
 A local, static typing trainer that runs in the browser with no backend and no external API.
 
+Made by Codex, here's the link :  https://subhn-n.github.io/Typing-Trainer/
+
 ## Features
 
 - random phrase mode
