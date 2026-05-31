@@ -594,6 +594,7 @@
         paceAnimationId = null;
       }
       if (resetPosition) {
+        startedAt = null;
         updatePaceCursor();
       }
     }
@@ -689,7 +690,7 @@
         currentPhrase = pickPhrase();
       }
       startedAt = null;
-      stopPaceAnimation(false);
+      stopPaceAnimation(true);
       finalStats = null;
       finished = false;
       typingInput.disabled = false;
@@ -751,7 +752,7 @@
     letterSelect.value = activeLetter;
 
     typingInput.addEventListener("input", handleTyping);
-    typingInput.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", (event) => {
       if (event.key === "*") {
         event.preventDefault();
         restart();
